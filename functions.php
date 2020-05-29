@@ -123,18 +123,24 @@ function vkonnektu_scripts() {
 	wp_enqueue_style( 'vkonnektu-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'uikit', get_stylesheet_directory_uri() . '/uikit.min.css' );
 	wp_enqueue_style( 'font-helvetica', get_stylesheet_directory_uri() . '/font/stylesheet.css' );
-	wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css', array(), null );
+	wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css');
 	wp_enqueue_style( 'vku', get_stylesheet_directory_uri() . '/vku.css' );
 
-	wp_enqueue_script( 'vkonnektu-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'vkonnektu-navigation', get_template_directory_uri() . '/js/navigation.js', array(), false, true);
 
-	wp_enqueue_script( 'vkonnektu-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'vkonnektu-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), false, true);
 
 	/* UIkit */
-	wp_enqueue_script( 'uikit-js', get_template_directory_uri() . '/js/uikit.min.js', array(), '20202026', true );
-	wp_enqueue_script( 'uikit-js-icons', get_template_directory_uri() . '/js/uikit-icons.min.js', array(), '20202026', true );
+	wp_enqueue_script( 'uikit-js', get_template_directory_uri() . '/js/uikit.min.js', array(), false, true);
+	wp_enqueue_script( 'uikit-js-icons', get_template_directory_uri() . '/js/uikit-icons.min.js', array(), false, true);
 
-	wp_enqueue_script( 'vku-script', get_template_directory_uri() . '/js/vku.js', array(), '20202026', true );
+	/* GSAP & ScrollMagic */
+	wp_enqueue_script( 'scrollmagic', get_template_directory_uri() . '/js/scrollmagic/ScrollMagic.min.js', array(), false, true);
+	wp_enqueue_script( 'scrollmagic-anim', get_template_directory_uri() . '/js/scrollmagic/animation.gsap.min.js', array(), false, true);
+	wp_enqueue_script( 'scrollmagic-debug', get_template_directory_uri() . '/js/scrollmagic/debug.addIndicators.min.js', array(), false, true);
+	wp_enqueue_script( 'gsap', get_template_directory_uri() . '/js/gsap.min.js', array(), false, true);
+
+	wp_enqueue_script( 'vku-script', get_template_directory_uri() . '/js/vku.js', array(), false, true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
