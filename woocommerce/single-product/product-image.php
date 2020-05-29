@@ -32,27 +32,95 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
 	'woocommerce-product-gallery--columns-' . absint( $columns ),
 	'images',
 ) );
+
+$attachment_ids = $product->get_gallery_image_ids();
+
+
+function wp_get_attachment_medium_url( $id ){
+	$medium_array = image_downsize( $id, 'medium' );
+	$medium_path = $medium_array[0];
+
+	return $medium_path;
+}
+function wp_get_attachment_large_url( $id ){
+	$medium_array = image_downsize( $id, 'large' );
+	$medium_path = $medium_array[0];
+
+	return $medium_path;
+}
+         
+// add the filter 
+add_filter( 'woocommerce_single_product_image_thumbnail_html', 'filter_woocommerce_single_product_image_thumbnail_html', 10, 2 ); 
+
 ?>
 
+<!-- Grid start 1 -->
+<div uk-grid >
 
-<!-- Grid start -->
-<div uk-grid>
+<div class="uk-width-2-3 <?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" >
 
-<div class="uk-width-2-3 <?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
 	
-	<figure class="woocommerce-product-gallery__wrapper">
+	
 		<?php
 		if ( $product->get_image_id() ) {
+			$html  = '<li>';
 			$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
+			$html .= '</li>';
 		} else {
-			$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
-			$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
-			$html .= '</div>';
+			$html  = '<li>';
+			$html .= sprintf( '<img src="%s" alt="%s" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
+			$html .= '</li>';
 		}
 
-		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
 		
-		do_action( 'woocommerce_product_thumbnails' );
 		?>
-	</figure>
+		
+	<div uk-slider="finite: true" id="single-product-slider">
+		<div class="uk-slider-container uk-position-relative">
+			<ul  uk-lightbox class="uk-slider-items uk-child-width-1-1">
+			<?php
+			
+			foreach ( $attachment_ids as $attachment_id ) {	?>
+				
+				<li>
+				<a class="uk-inline"  href="<?php echo $image_link = wp_get_attachment_large_url( $attachment_id ); ?>">
+				   <img  src="<?php echo $image_link = wp_get_attachment_large_url( $attachment_id ); ?>" alt="">
+				</a>
+				</li>
+		   
+			<?php  } ?>
+			
+			</ul>
+			<a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+			<a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next uk-slider-item="next"></a>
+		</div>
+	</div>
+
+	<div id="thumbnail_block" class="thumbnail">
+		
+	<ul>
+		 <?php  
+
+		 $attr_index = 0;
+
+		 foreach ( $attachment_ids as $attachment_id ) { 
+
+			
+			
+
+			 ?>
+			
+			<li>
+			<img src="<?php echo $image_link = wp_get_attachment_medium_url( $attachment_id ); ?>" attr_index="<?php echo $attr_index ?>" alt="">
+			</li>
+			
+ 
+		<?php  
+		$attr_index++; 
+		} ?>
+		 
+		 </ul>	 
+		 
+	</div>
+	
 </div>

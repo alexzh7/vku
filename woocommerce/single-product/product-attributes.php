@@ -23,7 +23,7 @@ if ( ! $product_attributes ) {
 	return;
 }
 ?>
-<table class="woocommerce-product-attributes shop_attributes">
+<table class="uk-table uk-table-divider">
 	<?php foreach ( $product_attributes as $product_attribute_key => $product_attribute ) : ?>
 		<tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--<?php echo esc_attr( $product_attribute_key ); ?>">
 			<th class="woocommerce-product-attributes-item__label"><?php echo wp_kses_post( $product_attribute['label'] ); ?></th>
