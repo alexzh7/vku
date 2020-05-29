@@ -57,7 +57,7 @@ add_filter( 'woocommerce_single_product_image_thumbnail_html', 'filter_woocommer
 <!-- Grid start 1 -->
 <div uk-grid >
 
-<div class="uk-width-2-3 <?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" >
+<div class="uk-width-1-2@s uk-width-2-3@m <?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" >
 
 	
 	

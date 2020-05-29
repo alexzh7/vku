@@ -40,7 +40,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 						<span>1</span>
 					</div>
 					<div class="uk-grid-small uk-width-expand uk-flex uk-flex-middle" uk-grid>
-						<div class="uk-width-expand" uk-leader>Корзина</div>
+						<div class="uk-width-expand" uk-leader><span class="uk-visible@m">Корзина</span></div>
 						<div><span uk-icon="icon:  chevron-right"></span></div>
 					</div>
 				</div>
@@ -51,32 +51,32 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 						<span class="icon" uk-icon="icon: file-edit"></span>
 						<span>2</span>
 					</div>
-					<div class="uk-grid-small uk-width-expand uk-flex uk-flex-middle" uk-grid>
-						<div class="uk-width-expand" uk-leader>Анкета</div>
+					<div class="uk-grid-small@s uk-grid-collapse uk-width-expand uk-flex uk-flex-middle" uk-grid>
+						<div class="uk-width-expand" uk-leader><span class="uk-visible@m">Анкета</span></div>
 						<div><span uk-icon="icon:  chevron-right"></span></div>
 					</div>
 				</div>
 				
 			</li>
-			<li class="uk-width-auto">
+			<li class="uk-width-auto uk-align-right">
 			<div class="uk-grid-small uk-width-auto" uk-grid>
 					<div class="cart__steps-icon">
 						<span class="icon" uk-icon="icon: check"></span>
 						<span>3</span>
 					</div>
 					<div class="uk-grid-small uk-width-expand uk-flex uk-flex-middle" uk-grid>
-						<div class="uk-width-expand"><p>Заказ оформлен</p></div>
+						<div class="uk-width-expand"><span class="uk-visible@m">Заказ оформлен</span></div>
 					</div>
 				</div>
 			</li>
 		</ul>
-</div>
+	</div>
 
 
 <form name="checkout" method="post" class="uk-form checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
 <div uk-grid>
-	<div class="uk-width-2-3">
+	<div class="uk-width-2-3@m">
 		<?php if ( $checkout->get_checkout_fields() ) : ?>
 
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
@@ -95,7 +95,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 		<?php endif; ?>
 	</div>
-	<div class="uk-width-1-3">
+	<div class="uk-width-1-3@m">
 	<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
 		
 		<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>

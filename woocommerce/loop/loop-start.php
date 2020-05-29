@@ -19,5 +19,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<ul id="main-catalog" uk-grid class="main-catalog uk-child-width-1-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
+<ul id="main-catalog" uk-grid class="main-catalog uk-child-width-1-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>@m uk-child-width-1-2@s">
 

@@ -224,67 +224,7 @@ header nav {
     margin-right: 2px;
 }
 
-/* Padding between devices (a tag) */
-@media (min-width: 1200px) {
-    .uk-flex.uk-flex-center.uk-grid a {
-        padding-left: 30px;
-    }
-}
 
-
-/* Top margin between devices and nav categories */
-@media (min-width: 1200px) {
-*+.uk-grid-margin, .uk-grid+.uk-grid, .uk-grid>.uk-grid-margin {
-    margin-top: 26px;
-}
-} 
-
-@media (min-width: 980px) {
-    .uk-tab>*>a {
-        padding: 1.8vh 2.9vw;
-    }
-    }
-
-@media (min-width: 2000px) {
-    .uk-tab>*>a {
-        padding: 1vh 2.3vw;
-    }
-}
-
-@media (min-width: 1650px) {
-    .sensors {
-        margin: 0px 29vw;
-    }
-}
-
-@media (max-width: 980px) {
-    .hide-nav {
-        display: none;
-    }
-    .ham-div {
-        display: block;
-        margin-top: 28px;
-    }
-    .logo {
-        width: 12rem;
-    }
-    .cart-contents {
-        margin-right: 1.6rem !important;
-    }
-}
-
-@media (max-width: 360px) {
-    .logo {
-        width: 10.5rem;
-    }
- 
-}
-
-@media (min-width: 980px) {
-    .ham-div {
-        display: none;
-    }
-}
 
 
 /* Product */
@@ -741,4 +681,96 @@ ul.flex-direction-nav li a:hover {
     float: right;
     margin-top: 0;
     width: 48%;
+}
+
+/* Padding between devices (a tag) */
+@media (min-width: 1200px) {
+    .uk-flex.uk-flex-center.uk-grid a {
+        padding-left: 30px;
+    }
+}
+
+
+/* Top margin between devices and nav categories */
+@media (min-width: 1200px) {
+*+.uk-grid-margin, .uk-grid+.uk-grid, .uk-grid>.uk-grid-margin {
+    margin-top: 26px;
+}
+} 
+
+@media (min-width: 980px) {
+    .uk-tab>*>a {
+        padding: 1.8vh 2.9vw;
+    }
+    }
+
+@media (min-width: 2000px) {
+    .uk-tab>*>a {
+        padding: 1vh 2.3vw;
+    }
+}
+
+@media (min-width: 1650px) {
+    .sensors {
+        margin: 0px 29vw;
+    }
+}
+
+@media (max-width: 980px) {
+    .hide-nav {
+        display: none;
+    }
+    .ham-div {
+        display: block;
+        margin-top: 28px;
+    }
+    .logo {
+        width: 12rem;
+    }
+    .cart-contents {
+        margin-right: 1.6rem !important;
+    }
+    .steps-checkout {
+        width: 100%;
+    }
+    .steps-checkout .cart__steps > li:first-child .cart__steps-icon,
+    .steps-checkout .cart__steps > li:nth-of-type(2) .cart__steps-icon {
+        margin-left: 23px;
+        margin-right: 0;
+    }
+    .steps-checkout .cart__steps > li .cart__steps-icon {
+        margin-right: 0;
+    }
+    .product .thumbnail img {
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .woocommerce-billing-fields__field-wrapper > p:nth-of-type(2) {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .steps-checkout .uk-leader,
+    .steps-checkout .uk-leader + div > span.uk-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo {
+        width: 10.5rem;
+    }
+ 
+}
+
+@media (min-width: 980px) {
+    .ham-div {
+        display: none;
+    }
 }
