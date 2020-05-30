@@ -14,23 +14,36 @@ get_header();
         <div class="slides">
             <div class="slide slide-active">
                 <img src="/wp-content/themes/vkonnektu/img/house.jpg" alt="">
-                <img id="door" src="/wp-content/themes/vkonnektu/img/door_sensor.svg" alt="">
-                <img id="lights" src="/wp-content/themes/vkonnektu/img/lights.svg" alt="">
-                <img id="webcam" src="/wp-content/themes/vkonnektu/img/webcam.svg" alt="">
-                <img id="relay" src="/wp-content/themes/vkonnektu/img/single_relay.svg" alt="">
+                <img id="door" src="/wp-content/themes/vkonnektu/img/door_sensor.svg" 
+                data-tippy-content = "Дверной датчик SD800 обеспечивает сигнализацию об открытии/закрытии двери, окна или форточки с контролем повышенной вибрации (стук, попытка взлома)">
+                <img id="lights" src="/wp-content/themes/vkonnektu/img/lights.svg" 
+                data-tippy-content = "Управляйте освещением с помощью модулей SL800 или SR800">
+                <img id="webcam" src="/wp-content/themes/vkonnektu/img/webcam.svg" data-tippy-placement="left-start"
+                data-tippy-content = "Уличная 2Мп IP видеокамера VKU-G14 обеспечит безопасность Вашего дома. Камера имеет датчик движения, который при срабатывании отправляет тревогу пользователю в приложение и фотоснимок события на e-mail">
+                <img id="relay" src="/wp-content/themes/vkonnektu/img/single_relay.svg" data-tippy-placement="top"
+                data-tippy-content = "Одноканальное реле SR800 отвечает за автоматичекое и дистанционное управление гаражными воротами">
             </div>
             <div class="slide">
-                <img src="/wp-content/themes/vkonnektu/img/kitchen.jpg" alt="">
-                <img id="smoke" src="/wp-content/themes/vkonnektu/img/smoke.svg" alt="">
-                <img id="plug" src="/wp-content/themes/vkonnektu/img/plug.svg" alt="">
-                <img id="hub" src="/wp-content/themes/vkonnektu/img/hub.svg" alt="">
-                <img id="multisensor" src="/wp-content/themes/vkonnektu/img/multisensor.svg" alt="">
+                <img src="/wp-content/themes/vkonnektu/img/kitchen.jpg"
+                data-tippy-content = "">
+                <img id="smoke" src="/wp-content/themes/vkonnektu/img/smoke.svg" data-tippy-placement="bottom"
+                data-tippy-content = "Датчик дыма SS800 сигнализирует о задымленности помещений, предупреждая звуковыми сигналами об опасности пожара и отравления угарными газами, присылает уведомления в приложении и запускает пользовательсике сценарии">
+                <img id="plug" src="/wp-content/themes/vkonnektu/img/plug.svg"
+                data-tippy-content = "Умная розетка SP800 позволяет управлять любыми потребителями с заявленной мощностью потребления до 2.5 кВ">
+                <img id="hub" src="/wp-content/themes/vkonnektu/img/hub.svg" data-tippy-placement="left-start"
+                data-tippy-content = "Центр управления Smart Hub SH800 производит коммутацию и управление всеми устройствами и датчиками умного дома экосистемы VKU по протоколу ZigBee">
+                <img id="multisensor" src="/wp-content/themes/vkonnektu/img/multisensor.svg" data-tippy-placement="bottom"
+                data-tippy-content = "Многофункциональный датчик SM800 сочетает в себе датчик температуры и влажности окружающего воздуха, датчик освещенности и датчик движения. Оснащен датчиком демонтажа для оповещения о несанкционированном снятии устройства с крепления">
             </div>
             <div class="slide">
-                <img src="/wp-content/themes/vkonnektu/img/yard.jpg" alt="">
-                <img id="water" src="/wp-content/themes/vkonnektu/img/water.svg" alt="">
-                <img id="webcam-2" src="/wp-content/themes/vkonnektu/img/webcam.svg" alt="">
-                <img id="lights-2" src="/wp-content/themes/vkonnektu/img/lights.svg" alt="">
+                <img src="/wp-content/themes/vkonnektu/img/yard.jpg"
+                data-tippy-content = "">
+                <img id="water" src="/wp-content/themes/vkonnektu/img/water.svg" data-tippy-placement="top"
+                data-tippy-content = "Автоматизируйте полив участка с помощью реле SR800 или умных розеток SP800">
+                <img id="webcam-2" src="/wp-content/themes/vkonnektu/img/webcam.svg" data-tippy-placement="bottom"
+                data-tippy-content = "Видеокамера VKU-G14 обеспечивает безопасность Вашей придомовой территории, имеет ночной режим работы, угол обзора 100°, детектор движения и разрешение Full HD 1080р">
+                <img id="lights-2" src="/wp-content/themes/vkonnektu/img/lights.svg"
+                data-tippy-content = "Управляйте освещением с помощью модулей SL800 или SR800">
             </div>
         </div>
         <div class="slider-pagination">
