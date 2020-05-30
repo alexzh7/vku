@@ -224,12 +224,11 @@ header nav {
     margin-right: 2px;
 }
 
-
-
-
 /* Product */
 
-
+.product.type-product{ 
+    margin-top: 40px;
+}
 
 .summary.entry-summary {
     padding: 0;
@@ -338,7 +337,12 @@ ul.flex-direction-nav li a:hover {
     height: 17px;
 }
 
-/* Main page slider */
+/* Main page */
+.main-page h1 {
+    font-weight: bold !important;
+}
+
+/* First section, slider */
 .first-section {
     position: relative;
 }
@@ -394,7 +398,7 @@ ul.flex-direction-nav li a:hover {
     font-size: 16px;
 }
 
-#door, #lights, #webcam, #relay {
+#door, #lights, #webcam, #relay, #water, #webcam-2, #lights-2, #smoke, #plug, #hub, #multisensor {
     position: absolute;
     width: 6%;
 }
@@ -421,17 +425,19 @@ ul.flex-direction-nav li a:hover {
 
 .first-slide-text {
     position: absolute;
-    bottom: 9%;
-    left: 5%;
+    bottom: 6%;
+    left: 0%;
     text-align: center;
     color: #fff;
-    max-width: 450px;
+    max-width: 600px;
+    background: rgba(38, 65, 128, 0.69);
+    padding: 10px 20px;
+    z-index: 1;
 }
 
 .first-slide-text h1 {
     font-size: 40px;
-    color: #fff;
-    font-weight: 700 !important;
+    color: #fff; 
     margin-bottom: 10px;
 }
 
@@ -439,7 +445,242 @@ ul.flex-direction-nav li a:hover {
     font-size: 18px;
     margin: 0;
 }
-/* Main page slider end */
+
+/* Second slide  */
+#smoke {
+    top: 25%;
+    left: 13%;
+}
+
+#plug {
+    top: 49%;
+    left: 37%;
+}
+
+#hub {
+    top: 52%;
+    right: 11%;
+}
+
+#multisensor {
+    top: 9%;
+    left: 62%;
+}
+
+/* Third slide */
+
+#water {
+    bottom: 26%;
+    right: 24%;
+}
+
+#webcam-2 {
+    top: 33%;
+    left: 12%;
+}
+
+#lights-2 {
+    top: 31%;
+    left: 41%;
+}
+
+/* Second section */
+.second-section {
+height: calc(100vh - 80px);
+}
+
+.second-section>h1{
+    text-align: center;
+    margin: 120px 0 0;
+}
+
+.ecosystem {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 80px 0;
+}
+
+.ecosystem img {
+    width: 70px;
+}
+
+.ecosystem p {
+    font-size: 20px;
+    margin: 14px 0 0 0;
+}
+
+.eco-description {
+    max-width: 150px;
+    text-align: center;
+}
+
+#eco-hub {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 45%;
+}
+
+/* Third section */
+.third-section {
+    height: calc(100vh - 80px);
+}
+
+.hub-description {
+    text-align: center;
+    opacity: 0;
+}
+
+.hub-description h1{
+    margin-top: 30px;
+}
+
+.third-section p {
+    font-size: 20px;
+    width: 55%;
+    margin: auto;
+}
+
+#hub-devices {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 84%;
+    opacity: 0;
+}
+
+
+/* Fourth section */
+.fourth-section {
+    background: #e7e7e7;
+}
+
+.fourth-section h1 {
+    text-align: center;
+    padding: 70px 0 40px;
+    margin: 50px 0 0;
+}
+
+.zb-desc {
+    position: relative;
+    font-size: 1.3rem;
+    padding: 0;
+}
+
+.zb-desc p {
+    position: absolute;
+    width: 90%;
+    top: 15%;
+}
+
+#zb-img {
+    margin-bottom: 130px;
+}
+
+.zb-switch {
+    position: absolute;
+    display: flex;
+    font-weight: bold;
+    width: 200px;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 14px;
+    bottom: 31%;
+    left: 20%;
+}
+
+.zb-switch div {
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
+}
+
+.zb-active {
+    border-radius: 13px;
+    background: #238DC1;
+    color: #fff;
+}
+
+/* Fifth section */
+.fifth-section {
+    height: calc(100vh - 80px);
+    margin-bottom: 40px;
+}
+
+.fifth-section>h1 {
+    text-align: center;
+    padding: 70px 0 40px;
+    margin: 0;
+}
+
+.app-download {
+    display: flex;
+    width: 380px;
+    justify-content: space-between;
+    margin: 60px auto 0;
+}
+
+.app-desc {
+    width: 68%;
+    margin: 14% auto 8%;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+#app-bullets {
+    display: flex;
+    justify-content: space-evenly;
+    width: 130px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+#app-bullets a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 20px;
+    border-radius: 100%;
+    background: #b5b5ac;
+}
+
+#app-bullets a.uk-active {
+    background: #238DC1;
+}
+
+#img-alice {
+    display: block;
+    margin: 0 auto;
+}
+
+.app-phone-div {
+    padding: 0;
+}
+
+.app-screens {
+    position: relative;
+    left: 25%;
+    height: 100%;
+    width: 330px;
+}
+
+.app-screens img {
+    position: absolute;
+}
+
+.app-screen {
+    width: 86.8%;
+    left: 6.8%;
+    top: 4.6%;
+}
+
+/* Sixth section */
+.sixth-section {
+    height: calc(100vh - 80px);
+    background: #f6f6f6;
+}
 
 /* slide on product page start*/
 
