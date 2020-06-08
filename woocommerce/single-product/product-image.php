@@ -58,9 +58,7 @@ add_filter( 'woocommerce_single_product_image_thumbnail_html', 'filter_woocommer
 <div uk-grid >
 
 <div class="uk-width-1-2@s uk-width-2-3@m <?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" >
-
-	
-	
+		
 		<?php
 		if ( $product->get_image_id() ) {
 			$html  = '<li>';
@@ -75,9 +73,14 @@ add_filter( 'woocommerce_single_product_image_thumbnail_html', 'filter_woocommer
 		
 		?>
 		
-	<div uk-slider="finite: true" id="single-product-slider">
+	<div uk-slider="finite: true" id="single-product-slider" uk-slider>
 		<div class="uk-slider-container uk-position-relative">
 			<ul  uk-lightbox class="uk-slider-items uk-child-width-1-1">
+			<li>
+				<?php
+					echo custom_show_product_images( $post_thumbnail_id, false );
+				?>
+			</li>
 			<?php
 			
 			foreach ( $attachment_ids as $attachment_id ) {	?>
@@ -99,14 +102,17 @@ add_filter( 'woocommerce_single_product_image_thumbnail_html', 'filter_woocommer
 	<div id="thumbnail_block" class="thumbnail">
 		
 	<ul>
+			<li>
+				<?php
+					echo custom_show_product_images( $post_thumbnail_id, $main_image = true );
+				?>
+			</li>
 		 <?php  
 
-		 $attr_index = 0;
+		 $attr_index = 1;
 
 		 foreach ( $attachment_ids as $attachment_id ) { 
 
-			
-			
 
 			 ?>
 			

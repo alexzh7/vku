@@ -678,9 +678,158 @@ height: calc(100vh - 80px);
 
 /* Sixth section */
 .sixth-section {
-    height: calc(100vh - 80px);
     background: #f6f6f6;
+    position: relative;
 }
+
+.sixth-section h1 {
+    text-align: center;
+}
+
+.sixth-section>h1 {
+    padding: 50px 0 80px;
+    margin: 0;
+}
+
+.st-description {
+    width: 66%;
+    margin: 0 auto;
+    position: sticky;
+    top: 20%;
+}
+
+.st-description>h1 {
+    font-size: 2.2rem;
+    text-align: left;
+}
+
+.st-description p {
+    font-size: 1.3rem;
+}
+
+.st-slide {
+    background: #fff;
+    width: 94%;
+    border-radius: 35px;
+    margin-bottom: 200px !important;
+}
+
+.st-desc {
+    width: 75%;
+    margin: 60px auto 0;
+}
+
+.st-desc>h1 {
+    font-size: 2.2rem;
+}
+
+.st-desc p {
+    font-size: 1.2rem;
+}
+
+.st-img {
+    padding: 0;
+    position: relative;
+}
+
+.st-image {
+    top: 4%;
+    left: 8%;
+    border-radius: 35px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.st-image img {
+    top: 12%;
+    left: -11%;
+    width: 90px;
+    position: absolute;
+}
+
+.st-icon {
+    width: 40px;
+}
+
+.st-combo {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.st-combo span {
+    font-weight: bold;
+    font-size: 3.5rem;
+    line-height: 160px;
+}
+
+.st-combo-item {
+    text-align: center;
+    width: 210px;
+}
+
+.st-combo-item p {
+    margin: 0 0 30px;
+}
+
+.st-nav-wrapper {
+    position: absolute;
+    left: 70px;
+    top: 680px;
+}
+
+.st-bottom-nav {
+    position: sticky;
+    font-size: 1.1rem;
+}
+
+.st-bottom-nav p {
+    margin: 5px 0 0;
+}
+
+
+
+
+
+/* Footer */
+
+.site-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
+.ft-links {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.ft-links a{
+    color: black;
+}
+#ft-logo {
+    width: 350px;
+}
+
+#ft-insta {
+    width: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* slide on product page start*/
 
@@ -715,6 +864,10 @@ height: calc(100vh - 80px);
 }
 .product .thumbnail ul > li:not(.active) {
     opacity: .5;
+}
+
+.uk-lightbox {
+    background: #fff;
 }
 
 .woocommerce-tabs {
@@ -924,26 +1077,6 @@ height: calc(100vh - 80px);
     width: 48%;
 }
 
-/* Padding between devices (a tag) */
-@media (min-width: 1200px) {
-    .uk-flex.uk-flex-center.uk-grid a {
-        padding-left: 30px;
-    }
-}
-
-
-/* Top margin between devices and nav categories */
-@media (min-width: 1200px) {
-*+.uk-grid-margin, .uk-grid+.uk-grid, .uk-grid>.uk-grid-margin {
-    margin-top: 26px;
-}
-} 
-
-@media (min-width: 980px) {
-    .uk-tab>*>a {
-        padding: 1.8vh 2.9vw;
-    }
-    }
 
 @media (min-width: 2000px) {
     .uk-tab>*>a {
@@ -954,6 +1087,24 @@ height: calc(100vh - 80px);
 @media (min-width: 1650px) {
     .sensors {
         margin: 0px 29vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    *+.uk-grid-margin, .uk-grid+.uk-grid, .uk-grid>.uk-grid-margin {
+        margin-top: 26px;
+    }
+    .uk-flex.uk-flex-center.uk-grid a {
+        padding-left: 30px;
+    }
+} 
+
+@media (min-width: 980px) {
+    .uk-tab>*>a {
+        padding: 1.8vh 2.9vw;
+    }
+    .ham-div {
+        display: none;
     }
 }
 
@@ -985,8 +1136,18 @@ height: calc(100vh - 80px);
     .product .thumbnail img {
         max-width: 100%;
         height: auto;
-        max-height: 100%;
+        max-height: 100px;
     }
+
+    #ft-logo {
+        display:none;
+    }
+
+    .site-footer {
+        justify-content: space-between;
+        padding: 30px 20px;
+    }
+
 }
 
 @media (max-width: 767px) {
@@ -994,6 +1155,33 @@ height: calc(100vh - 80px);
         float: none;
         width: 100%;
     }
+}
+
+@media (max-width: 430px) {
+    #ft-insta {
+        width: 40px;
+    }
+
+    .ft-links {
+        font-size: 1rem;
+    }
+
+    #door, #lights, #webcam, #relay, #water, #webcam-2, #lights-2, #smoke, #plug, #hub, #multisensor {
+        width: 12%;
+    }
+
+    .slider-pagination {
+        display: flex;
+        top: 89%;
+        right: 38%;
+    }
+
+    .bullet {
+        width: 12px;
+        height: 12px;
+        margin-left: 14px;
+    }
+
 }
 
 @media (max-width: 400px) {
@@ -1007,11 +1195,5 @@ height: calc(100vh - 80px);
     .logo {
         width: 10.5rem;
     }
- 
-}
 
-@media (min-width: 980px) {
-    .ham-div {
-        display: none;
-    }
 }
