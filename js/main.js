@@ -1,28 +1,79 @@
 ( function() {
 
     //Workaround for correct element position calculations 
-    // window.onbeforeunload = () => {
-    //     window.scrollTo(0, 0);
-    // }
-    
-    // Variable for tracking slider autoplay
-    let sliderInterval = null
-    
+    window.onbeforeunload = () => {
+        window.scrollTo(0, 0);
+    } 
+
     window.onload = () => {
-        // Resize slider container on page load
-        resizeSliderContainer();
-        // Start slider
-        sliderInterval = setInterval(nextSlide, 5000);
-    
-        animateHub();
-    
+        //GSAP & ScrollMagic only for 767+ screen sizes
+        if(!window.matchMedia("(max-width: 767px)").matches) {
+            animateHub();
+        } else {
+            document.getElementById('hub-devices').src = '/wp-content/themes/vkonnektu/img/new/hub1.png';
+        }
+        
         wifiZigbeeSwitch();
         toggleAppScreenes();
     }
-      
 
-    //MAIN PAGE
-    //Toggle screensots on bullets click
+    //Main page slider
+    let swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        loop: true,
+        effect: 'fade',
+        speed: 1000,
+        // autoplay: {
+        //     delay: 5000,
+        //   },
+    });
+
+    // Tooltips (tippy.js)
+    tippy.setDefaultProps({
+        allowHTML: true,
+        interactive: true,
+        maxWidth: 325,
+        placement: 'top',
+        animation: 'shift-away',
+        duration: 500,
+        onShow(i) {
+            i.reference.style.opacity = 1;
+        },
+        onHide(i) {
+            i.reference.style.opacity = 0.7;
+        },
+    });
+    
+    tippy('#sl-cam', {
+        appendTo: document.body,
+    });
+    tippy('#sl-garage');
+    tippy('#sl-lights');
+    tippy('#sl-safety', {
+        appendTo: document.body,
+    });
+    tippy('#sl-hub', {
+        appendTo: document.body,
+    });
+    tippy('#sl-power', {
+        appendTo: document.body,
+    });
+    tippy('#sl-fire', {
+        appendTo: document.body,
+    });
+    tippy('#sl-temp', {
+        appendTo: document.body,
+    });
+    tippy('#sl-lights2');
+    tippy('#sl-cam2', {
+        appendTo: document.body,
+    });
+    tippy('#sl-water');
+
+    //Toggle screenshots on bullets click
     function toggleAppScreenes () {
         let bullets = document.getElementById('app-bullets');
         let screens = document.querySelectorAll('.app-screen');
@@ -64,7 +115,6 @@
     
     
     //Main page animations
-    
     function animateHub() {
         //Move #eco-hub to the center of #hub-devices
         let hubCoords = document.getElementById('eco-hub').getBoundingClientRect();
@@ -78,10 +128,9 @@
         let scene = new ScrollMagic.Scene({
             triggerElement: ".ecosystem",
             offset: 100,
-            duration: "75%",
+            duration: "65%",
             triggerHook: 0.3
         })
-        //.addIndicators()
         .setTween(tl)
         .addTo(controller);
     
@@ -122,83 +171,5 @@
           left: box.left + pageXOffset + box.width / 2,
           width: box.width
         };
-    } 
-    
-    // Main page slider
-    let paginationDiv = document.querySelector('.slider-pagination')
-    let slidesDiv = document.querySelector('.slides')
-    let bullets = document.querySelectorAll('.bullet')
-    let slides = document.querySelectorAll('.slide')
-    let currentImg = document.querySelector('.slide-active')
-    
-    let currentIndex = 0
-    
-    paginationDiv.addEventListener('click', function (e) {
-        const {target} = e
-        if (target.tagName === 'SPAN') {
-            // Find clicked element index and save it to currentIndex variable
-            currentIndex = [...target.parentElement.children].indexOf(target)
-            switchSlides()
-    
-            //Stop autoplay
-            clearInterval(sliderInterval)
-        }
-    })
-    
-    function switchSlides () {
-        // Switch slides
-        slides.forEach(function(slide, i) {
-            slide.className = 'slide'
-            if (i == currentIndex) {
-                slide.className = 'slide slide-active'
-            }
-        })
-    
-        // Switch pagination bullets
-        bullets.forEach(function (bullet, i) {
-            bullet.className = 'bullet'
-            if (i == currentIndex) {
-                bullet.className = 'bullet bullet-active'
-            }
-        })
-    }
-    
-    function nextSlide() {
-        currentIndex++
-         if (currentIndex > slides.length - 1) {
-             currentIndex = 0
-         }
-        switchSlides()
-    }
-    
-    // Resize parent container height based on child image height on window resize
-    // needed because of position: absolute of images
-    window.addEventListener('resize', function() {
-        resizeSliderContainer()
-    })
-    
-    function resizeSliderContainer () {
-        slidesDiv.setAttribute('style','height:' + currentImg.offsetHeight + 'px')
-    }
-    
-    // Tooltips (tippy.js)
-    tippy.setDefaultProps({
-        allowHTML: true,
-        interactive: true,
-        maxWidth: 300,
-        placement: 'right-start',
-    });
-    
-    tippy('#door');
-    tippy('#lights');
-    tippy('#relay');
-    tippy('#webcam');
-    tippy('#smoke');
-    tippy('#plug');
-    tippy('#hub');
-    tippy('#multisensor');
-    tippy('#water');
-    tippy('#webcam-2');
-    tippy('#lights-2');
-    
+    }  
 } )();

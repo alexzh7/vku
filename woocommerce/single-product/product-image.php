@@ -73,7 +73,7 @@ add_filter( 'woocommerce_single_product_image_thumbnail_html', 'filter_woocommer
 		
 		?>
 		
-	<div uk-slider="finite: true" id="single-product-slider" uk-slider>
+	<div uk-slider id="single-product-slider" uk-slider>
 		<div class="uk-slider-container uk-position-relative">
 			<ul  uk-lightbox class="uk-slider-items uk-child-width-1-1">
 			<li>

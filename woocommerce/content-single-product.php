@@ -77,11 +77,3 @@ if ( post_password_required() ) {
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
