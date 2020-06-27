@@ -244,7 +244,7 @@ function my_header_add_to_cart_fragment( $fragments ) {
 	$count = WC()->cart->cart_contents_count;
 	?>
 	<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"> 
-		<img src="/wp-content/themes/vkonnektu/img/cart.svg" alt="Cart">
+		<img src="/wp-content/themes/vkonnektu/img/new/cart.svg" alt="Cart">
 		<span class="cart-count">
 			<?php
 				if ( $count > 0 ) {

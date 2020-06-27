@@ -1,15 +1,8 @@
 ( function() {
 
-    //Workaround for correct element position calculations 
-    // window.onbeforeunload = () => {
-    //     window.scrollTo(0, 0);
-    // }
-
     toggleNavChevrons();
     toggleMobileNav();
-    
-    //GLOBAL
-    
+
     // Toggle mobile nav chevrons (arrows) (freaking uikit)
     function toggleNavChevrons () {
         let chevrons = document.querySelectorAll('.cat-chevron-left')
@@ -68,8 +61,6 @@ jQuery(document).ready(function ($) {
     var $slideItem = $('#single-product-slider ul > li');
 
     $slideItem.on('beforeitemshow', function () {
-        // UIkit.notification({ message: 'Fire Before Item Show', timeout:1000 });
-        // console.log(slideshow.index);
         $('.product .thumbnail img').each(function (index, val) {
             if ($(this).attr('attr_index') == slideshow.index) {
                 $(this).closest('li').addClass('active');

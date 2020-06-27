@@ -28,8 +28,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<span>1</span>
 					</div>
 					<div class="uk-grid-small uk-width-expand uk-flex uk-flex-middle" uk-grid>
-						<div class="uk-width-expand" uk-leader><span class="uk-visible@m">Корзина</span></div>
-						<div><span uk-icon="icon:  chevron-right"></span></div>
+						<div class="uk-width-expand">
+							<span class="uk-visible@m">Корзина</span>
+						</div>
 					</div>
 				</div>
 			</li>
@@ -40,8 +41,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<span>2</span>
 					</div>
 					<div class="uk-grid-small@s uk-grid-collapse uk-width-expand uk-flex uk-flex-middle" uk-grid>
-						<div class="uk-width-expand" uk-leader><span class="uk-visible@m">Анкета</span></div>
-						<div><span uk-icon="icon:  chevron-right"></span></div>
+						<div class="uk-width-expand"><span class="uk-visible@m">Анкета</span></div>
 					</div>
 				</div>
 				

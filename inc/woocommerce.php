@@ -160,7 +160,7 @@ if ( ! function_exists( 'vkonnektu_woocommerce_wrapper_before' ) ) {
 	function vkonnektu_woocommerce_wrapper_before() {
 		?>
 		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
+			<main id="main" class="site-main uk-container" role="main">
 			<?php
 	}
 }
