@@ -165,7 +165,7 @@
                                         </div>
                                     </li>
                                     <li class="hide-nav"><a href="#">Приложение</a></li>
-                                    <li class="hide-nav"><a href="#">Технологии</a></li>
+                                    <li class="hide-nav"><a href="#">Интеграция</a></li>
                                     <li class="hide-nav"><a href="#">Премиум</a></li>
                                     <li class="hide-nav"><a href="#">О нас</a></li>
                                 </ul>
@@ -367,7 +367,7 @@
 
                         </li>
                         <li><a href="#">Приложение</a></li>
-                        <li><a href="#">Технологии</a></li>
+                        <li><a href="#">Интеграция</a></li>
                         <li><a href="#">Премиум</a></li>
                         <li><a href="#">О нас</a></li>
                         <li><a href="#">RU | EN</a></li>

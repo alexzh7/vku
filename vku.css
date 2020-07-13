@@ -93,9 +93,13 @@ header nav {
     color: black; 
 }
 
+.uk-navbar-container>.uk-container .uk-navbar-left {
+    margin-left: 45px;
+}
+
 .logo {
-    width: 13rem;
-    margin-right: 3rem;
+    width: 17rem;
+    margin-right: 2.5rem;
 }
 
 .uk-navbar-dropdown {
@@ -389,7 +393,7 @@ ul.flex-direction-nav li a:hover {
 }
 
 .second-slide {
-    background: url("img/new/kitchen.jpg") no-repeat 73% center; 
+    background: url("img/new/kitchen.jpg") no-repeat 71% center; 
 }
 
 .third-slide {
@@ -404,65 +408,32 @@ ul.flex-direction-nav li a:hover {
     background-size: cover;
 }
 
-.first-section img {
+.first-section svg {
     position: absolute;
-    opacity: 0.7;
+    opacity: 0.8;
+    margin-left: -30.1px;
+    margin-top: -30.1px;
 }
 
-#sl-cam {
-    top: 35%;
-    right: 51%;
-}
-
-#sl-garage{
-    top: 61%;
-    right: 61%;
-}
-
-#sl-lights{
-    top: 24%;
-    right: 22%;
-}
-
-#sl-safety{
-    top: 44%;
-    right: 35%;
-}
-
-#sl-fire {
-    top: 37%;
-    right: 36%;
-}
-
-#sl-hub{
-    top: 58%;
-    right: 19%;
-
-}
-
-#sl-power{
-    top: 56%;
-    right: 44%;
-}
-
-#sl-temp{
-    top: 24%;
-    right: 57%;
-}
 
 #sl-cam2{
-    top: 17%;
-    right: 35%;
+    top: 21%;
+    right: 33%;
 }
 
 #sl-lights2{
-    top: 24%;
-    right: 65%;
+    top: 34%;
+    left: 26%;
 }
 
 #sl-water{
-    top: 58%;
-    right: 27%;
+    bottom: 33%;
+    right: 25%;
+}
+
+#sl-power2{
+    top: 54%;
+    right: 15%;
 }
 
 .swiper-pagination-bullet {
@@ -677,11 +648,6 @@ ul.flex-direction-nav li a:hover {
     width: 45%;
 }
 
-/* Third section */
-/* .third-section {
-    height: calc(100vh - 80px);
-} */
-
 .hub-description {
     text-align: center;
     opacity: 0;
@@ -693,14 +659,14 @@ ul.flex-direction-nav li a:hover {
 
 .third-section p {
     font-size: 20px;
-    width: 55%;
+    width: 70%;
     margin: auto;
 }
 
 #hub-devices {
     margin: 0 auto 100px;
     display: block;
-    width: 84%;
+    width: 85%;
     opacity: 0;
 }
 
@@ -724,10 +690,12 @@ ul.flex-direction-nav li a:hover {
     list-style: none;
 }
 
-#zb-img {
+#zb-img,
+#zb-img2 {
     width: 50%;
     margin-bottom: 130px;
 }
+
 
 .zb-desc {
     width: 50%;
@@ -815,25 +783,13 @@ ul.flex-direction-nav li a:hover {
     margin: 0 auto;
 }
 
-.app-phone-div {
+.app-phone {
     padding: 0;
 }
 
 .app-screens {
-    position: relative;
-    left: 25%;
-    height: 100%;
-    width: 220px;
-}
-
-.app-screens img {
-    position: absolute;
-}
-
-.app-screen {
-    width: 86.8%;
-    left: 6.8%;
-    top: 4.6%;
+    margin: 0 auto;
+    width: 50%;
 }
 
 /* Sixth section */
@@ -876,7 +832,7 @@ ul.flex-direction-nav li a:hover {
 }
 
 .st-desc {
-    width: 75%;
+    width: 80%;
     margin: 60px auto 0;
 }
 
@@ -887,6 +843,7 @@ ul.flex-direction-nav li a:hover {
 .st-img {
     padding: 0;
     position: relative;
+    height: 380px;
 }
 
 .st-image {
@@ -903,7 +860,7 @@ ul.flex-direction-nav li a:hover {
 .st-image img {
     top: 12%;
     left: -11%;
-    width: 90px;
+    width: 80px;
     position: absolute;
 }
 
@@ -919,8 +876,8 @@ ul.flex-direction-nav li a:hover {
 
 .st-combo span {
     font-weight: bold;
-    font-size: 3.5rem;
-    line-height: 160px;
+    font-size: 3rem;
+    line-height: 140px;
 }
 
 .st-combo-item {
@@ -930,6 +887,11 @@ ul.flex-direction-nav li a:hover {
 
 .st-combo-item p {
     margin: 0 0 30px;
+}
+
+.st-combo-item img {
+    margin-bottom: 8px;
+    max-width: 80%;
 }
 
 .st-nav-wrapper {
@@ -1272,7 +1234,11 @@ ul.flex-direction-nav li a:hover {
 
 
 
-
+@media (min-height: 1200px) {
+    .second-section {
+        height: calc(50vh - 80px);
+    }
+}
 
 @media (min-width: 2500px) {
     .uk-tab>*>a {
@@ -1289,14 +1255,6 @@ ul.flex-direction-nav li a:hover {
 @media (min-width: 1650px) {
     .sensors {
         margin: 0px 29vw;
-    }
-    .app-screens {
-        width: 37%;
-    }
-    .app-screen {
-        width: 86.7%;
-        left: 6.7%;
-        top: 3.5%;
     }
 }
 
@@ -1319,6 +1277,7 @@ ul.flex-direction-nav li a:hover {
 }
 
 @media (max-width: 1200px) {
+ 
     .st-slide .uk-first-column {
         width: 100%;
     }
@@ -1401,7 +1360,8 @@ ul.flex-direction-nav li a:hover {
         text-align: center;
         font-size: 20px;
    }
-   #zb-img {
+   #zb-img,
+   #zb-img2 {
         width: 80%;
         margin: 0 auto;
    }
@@ -1465,51 +1425,10 @@ ul.flex-direction-nav li a:hover {
     .first-section {
         height: 71vh;
     }
-    .first-section img {
+    .first-section svg {
         width: 60px;
     }
-    #sl-cam {
-        top: 33%;
-        right: 54%;
-    }
-    #sl-garage {
-        top: 62%;
-        right: 66%;
-    }
-    #sl-lights{
-        top: 23%;
-        right: 21%;
-    }
-    #sl-safety{
-        top: 41%;
-        right: 36%;
-    }
-    #sl-fire {
-        top: 36%;
-        right: 37%;
-    }
-    #sl-hub{  
-        right: 12%;
-    }
-    #sl-temp{
-        top: 24%;
-        right: 66%;
-    }
-    #sl-power {
-        right: 50%;
-    }
-    #sl-cam2{
-        top: 22%;
-        right: 30%;
-    }
-    #sl-lights2{
-        top: 23%;
-        right: 69%;
-    }
-    #sl-water{
-        top: 58%;
-        right: 20%;
-    }
+    
     .swiper-container-horizontal>.swiper-pagination-bullets {
         bottom: 12%;
     }
@@ -1577,9 +1496,6 @@ ul.flex-direction-nav li a:hover {
         width: 74%;
         font-size: 20px;
     }
-    .app-screens {
-        width: 200px;
-    }
     .app-download img {
         width: 140px;
     }
@@ -1615,44 +1531,6 @@ ul.flex-direction-nav li a:hover {
     .slider-text p {
         font-size: 15px;
     }
-    #sl-cam {
-        right: 78%;
-    }
-    #sl-garage {
-        top: 60%;
-        right: 82%;
-    }
-    #sl-lights{
-        top: 25%;
-        right: 11%;
-    }
-    #sl-safety{
-        right: 41%;
-    }
-    #sl-fire {
-        right: 43%;
-    }
-    #sl-hub{  
-        right: 5%;
-    }
-    #sl-temp{
-        top: 19%;
-        right: 78%;
-    }
-    #sl-power {
-        right: 74%;
-    }
-    #sl-cam2{
-        top: 18%;
-        right: 23%;
-    }
-    #sl-lights2{
-        right: 70%;
-    }
-    #sl-water{
-        top: 54%;
-        right: 30%;
-    }
 
     .third-section p {
         font-size: 17px;
@@ -1682,9 +1560,6 @@ ul.flex-direction-nav li a:hover {
         padding: 0;
     }
 
-    .fifth-section {
-        height: 730px;
-    }
     .fifth-section .uk-first-column {
         width: 100%;
     }
@@ -1701,10 +1576,6 @@ ul.flex-direction-nav li a:hover {
     }
     #img-alice {
         display: none;
-    }
-    .app-screens {
-        width: 180px;
-        left: calc(50vw - 80px);
     }
     .app-download {
         width: 239px;
@@ -1738,6 +1609,28 @@ ul.flex-direction-nav li a:hover {
 }
 
 @media (max-width: 430px) {
+    #sl-cam2{
+        top: 29%;
+        right: 9%;
+    }
+    #sl-lights2{
+        top: 30%;
+        left: 26%;
+    }
+    #sl-water{
+        bottom: 35%;
+        right: 33%;    
+    }
+    #sl-power2{
+        top: 54%;
+        right: 4%;
+    }
+
+    .app-screens {
+        width: 210px;
+        margin-left: calc(50vw - 89px);
+    }
+
     .ecosystem img {
         width: 60px;
     }
@@ -1761,7 +1654,8 @@ ul.flex-direction-nav li a:hover {
         margin: 20px auto;
     }
 
-    #zb-img {
+    #zb-img,
+    #zb-img2 {
         width: 100%;
     }
 
@@ -1811,12 +1705,10 @@ ul.flex-direction-nav li a:hover {
     .first-section {
         height: 55vh;
     }
-    .first-section img {
+    .first-section svg {
         width: 55px;
     }
-    #sl-lights2 {
-        top: 21%;
-    }
+
     .slider-text {
         right: calc(50vw - 300px / 2);
         max-width: 295px;
@@ -1824,20 +1716,7 @@ ul.flex-direction-nav li a:hover {
     .slider-text h1 {
         font-size: 27px;
     }
-    #sl-cam {
-        right: 73%;
-    }
-    #sl-cam2{
-        top: 20%;
-        right: 15%;
-    }
-    #sl-lights2{
-        right: 67%;
-    }
-    #sl-water{
-        top: 53%;
-        right: 23%;
-    }
+
     #app-switcher {
         height: 70px;
     }
@@ -1846,6 +1725,11 @@ ul.flex-direction-nav li a:hover {
 @media (max-width: 360px) {
     .logo {
         width: 10.5rem;
+    }
+
+    .app-screens {
+        width: 155px;
+        margin-left: calc(50vw - 135px/2);
     }
 
     .zb-switch {

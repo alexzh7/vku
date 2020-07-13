@@ -124,7 +124,7 @@ function vkonnektu_scripts() {
 	wp_enqueue_style( 'uikit', get_stylesheet_directory_uri() . '/uikit.min.css' );
 	wp_enqueue_style( 'font-helvetica', get_stylesheet_directory_uri() . '/font/stylesheet.css' );
 	wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css');
-	wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper/css/swiper.min.css');
+	wp_enqueue_style( 'swiper', get_stylesheet_directory_uri() . '/swiper.min.css');
 	wp_enqueue_style( 'montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
 	wp_enqueue_style( 'vku', get_stylesheet_directory_uri() . '/vku.css' );
 
