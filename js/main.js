@@ -1,11 +1,14 @@
 (function () {
 
     //Workaround for correct element position calculations 
-    // window.onbeforeunload = () => {
-    //     window.scrollTo(0, 0);
-    // }
+    window.onbeforeunload = () => {
+        window.scrollTo(0, 0);
+    }
 
     window.onload = () => {
+
+        updatePointer();
+    
         //GSAP & ScrollMagic only for 767+ screen sizes
         if (!window.matchMedia("(max-width: 767px)").matches) {
             animateHub();
@@ -17,13 +20,78 @@
         toggleAppScreenes();
     }
 
+    window.onresize = () => {
+        updatePointer()
+    }
+
+    //Arrange icons on main page slider so they keep
+    //their position static when window is resized
+    let image = { width: 1440, height: 839 };
+
+    let target = new Array();
+    //First slide
+    target[0] = { x: 697, y: 317 };
+    target[1] = { x: 576, y: 561 };
+    target[2] = { x: 700, y: 480 };
+    target[3] = { x: 906, y: 391 };
+    target[4] = { x: 1085, y: 245 };
+
+    //Second slide
+    target[5] = { x: 897, y: 346 };
+    target[6] = { x: 1129, y: 529 };
+    target[7] = { x: 763, y: 514 };
+    target[8] = { x: 700, y: 263 };
+
+    let pointer = new Array();
+
+    //First slide
+    pointer[0] = document.getElementById('sl-cam');
+    pointer[1] = document.getElementById('sl-car');
+    pointer[2] = document.getElementById('sl-garage');
+    pointer[3] = document.getElementById('sl-safety');
+    pointer[4] = document.getElementById('sl-lights');
+
+    //Second slide
+    pointer[5] = document.getElementById('sl-fire');
+    pointer[6] = document.getElementById('sl-ir');
+    pointer[7] = document.getElementById('sl-power');
+    pointer[8] = document.getElementById('sl-temp');
+
+    function updatePointer() {
+        let windowWidth = document.querySelector('.first-section').getBoundingClientRect().width;
+        let windowHeight = document.querySelector('.first-section').getBoundingClientRect().height;
+
+        // Get largest dimension increase
+        let xScale = windowWidth / image.width;
+        let yScale = windowHeight / image.height;
+        let scale;
+        let yOffset = 0;
+        let xOffset = 0;
+
+        if (xScale > yScale) {
+            // The image fits perfectly in x axis, stretched in y
+            scale = xScale;
+            yOffset = (windowHeight - (image.height * scale)) / 2;
+        } else {
+            // The image fits perfectly in y axis, stretched in x
+            scale = yScale;
+            xOffset = (windowWidth - (image.width * scale)) * 0.71;
+        }
+
+        let arrayLength = target.length;
+
+        for (let i = 0; i < arrayLength; i++) {
+            pointer[i].style.top = (target[i].y) * scale + yOffset;
+            pointer[i].style.left = (target[i].x) * scale + xOffset;
+        }
+    }
+
     //Main page slider
     let swiper = new Swiper('.swiper-container', {
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
         },
-        loop: true,
         effect: 'fade',
         speed: 1000,
         autoplay: {
@@ -58,11 +126,15 @@
     tippy('#sl-cam', {
         appendTo: document.body,
     });
-    tippy('#sl-garage');
+    tippy('#sl-garage', {
+        appendTo: document.body,
+    });
     tippy('#sl-car', {
         appendTo: document.body,
     });
-    tippy('#sl-lights');
+    tippy('#sl-lights', {
+        appendTo: document.body,
+    });
     tippy('#sl-safety', {
         appendTo: document.body,
     });
@@ -78,11 +150,15 @@
     tippy('#sl-temp', {
         appendTo: document.body,
     });
-    tippy('#sl-lights2');
+    tippy('#sl-lights2', {
+        appendTo: document.body,
+    });
     tippy('#sl-cam2', {
         appendTo: document.body,
     });
-    tippy('#sl-water');
+    tippy('#sl-water', {
+        appendTo: document.body,
+    });
     tippy('#sl-power2', {
         appendTo: document.body,
     });
@@ -199,72 +275,3 @@
         };
     }
 })();
-
-jQuery(document).ready(function ($) {
-
-    //Arrange icons on main page slider so they keep
-    //their position static when window is resized
-    let image = { width: 1440, height: 839 };
-
-    let target = new Array();
-    //First slide
-    target[0] = { x: 697, y: 317 };
-    target[1] = { x: 576, y: 561 };
-    target[2] = { x: 700, y: 480 };
-    target[3] = { x: 906, y: 391 };
-    target[4] = { x: 1085, y: 245 };
-
-    //Second slide
-    target[5] = { x: 897, y: 346 };
-    target[6] = { x: 1129, y: 529 };
-    target[7] = { x: 763, y: 514 };
-    target[8] = { x: 700, y: 263 };
-
-    let pointer = new Array();
-    //First slide
-    pointer[0] = $('#sl-cam');
-    pointer[1] = $('#sl-car');
-    pointer[2] = $('#sl-garage');
-    pointer[3] = $('#sl-safety');
-    pointer[4] = $('#sl-lights');
-
-    //Second slide
-    pointer[5] = $('#sl-fire');
-    pointer[6] = $('#sl-ir');
-    pointer[7] = $('#sl-power');
-    pointer[8] = $('#sl-temp');
-
-    $(document).ready(updatePointer);
-    $(window).resize(updatePointer);
-
-    function updatePointer() {
-        let windowWidth = $('.first-section').width();
-        let windowHeight = $('.first-section').height();
-
-        // Get largest dimension increase
-        let xScale = windowWidth / image.width;
-        let yScale = windowHeight / image.height;
-        let scale;
-        let yOffset = 0;
-        let xOffset = 0;
-
-        if (xScale > yScale) {
-            // The image fits perfectly in x axis, stretched in y
-            scale = xScale;
-            yOffset = (windowHeight - (image.height * scale)) / 2;
-        } else {
-            // The image fits perfectly in y axis, stretched in x
-            scale = yScale;
-            xOffset = (windowWidth - (image.width * scale)) * 0.71;
-        }
-
-        let arrayLength = target.length;
-
-        for (let i = 0; i < arrayLength; i++) {
-            pointer[i].css('top', (target[i].y) * scale + yOffset);
-            pointer[i].css('left', (target[i].x) * scale + xOffset);
-        }
-
-    }
-
-});

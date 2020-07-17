@@ -164,16 +164,16 @@
 
                                         </div>
                                     </li>
-                                    <li class="hide-nav"><a href="#">Приложение</a></li>
-                                    <li class="hide-nav"><a href="#">Интеграция</a></li>
-                                    <li class="hide-nav"><a href="#">Премиум</a></li>
-                                    <li class="hide-nav"><a href="#">О нас</a></li>
+                                    <!-- <li class="hide-nav"><a href="#">Приложение</a></li> -->
+                                    <li class="hide-nav"><a href="/integration">Интеграция</a></li>
+                                    <li class="hide-nav"><a href="/premium">Премиум</a></li>
+                                    <li class="hide-nav"><a href="/about">О нас</a></li>
                                 </ul>
                             </div>
 
                             <div class="uk-navbar-right">
                                 <ul class="uk-navbar-nav">
-                                    <li class="hide-nav"><a href="#">RU | EN</a></li>
+                                    <!-- <li class="hide-nav"><a href="#">RU | EN</a></li> -->
                                     <li>
                                         <!-- Cart start
 									!!You should edit this element here and in functions.php!! -->
@@ -366,11 +366,11 @@
                             </ul>
 
                         </li>
-                        <li><a href="#">Приложение</a></li>
-                        <li><a href="#">Интеграция</a></li>
-                        <li><a href="#">Премиум</a></li>
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">RU | EN</a></li>
+                        <!-- <li><a href="#">Приложение</a></li> -->
+                        <li><a href="/integration">Интеграция</a></li>
+                        <li><a href="/premium">Премиум</a></li>
+                        <li><a href="/about">О нас</a></li>
+                        <!-- <li><a href="#">RU | EN</a></li> -->
                     </ul>
 
                 </div>

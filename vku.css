@@ -25,7 +25,7 @@ html, h1, h2, h3, h4, h5 {
 }
 
 .content-area {
-    margin-bottom: 170px;
+    margin-top: 10px;
 }
 
 nav.uk-navbar-container { 
@@ -94,7 +94,7 @@ header nav {
 }
 
 .uk-navbar-container>.uk-container .uk-navbar-left {
-    margin-left: 45px;
+    margin-left: 5px;
 }
 
 .logo {
@@ -253,6 +253,7 @@ header nav {
 
 .product.type-product{ 
     margin-top: 40px;
+    margin-bottom: 170px;
 }
 
 .summary.entry-summary {
@@ -1205,6 +1206,12 @@ ul.flex-direction-nav li a:hover {
     display: none !important;
 }
 
+.payment_method_ym_api_sberbank img,
+.payment_box.payment_method_ym_api_sberbank {
+    display: none !important;
+}
+
+
 /* formating cart-steps end */
 
 /* formantin alert text start */
@@ -1605,6 +1612,12 @@ ul.flex-direction-nav li a:hover {
     }
     .st-image {
         left: 8%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .eael-pricing.style-1 .eael-pricing-item .price-tag {
+        display: inline-block;
     }
 }
 

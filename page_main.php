@@ -15,9 +15,8 @@ get_header();
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="first-slide">
-
                         <svg id="sl-cam"
-                            data-tippy-content="Уличная 2Мп IP видеокамера VKU-G14 обеспечит безопасность Вашего дома. Камера имеет датчик движения, который при срабатывании отправляет push-уведомление пользователю с фотоснимком события"
+                            data-tippy-content="Уличная 2Мп IP видеокамера &lt;a href=&quot;/product/outdoor-cam-vku-g14/&quot; &gt; VKU-G14 &lt;/a&gt; обеспечит безопасность Вашего дома. Камера имеет датчик движения, который при срабатывании отправляет push-уведомление пользователю с фотоснимком события"
                             width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                                 <rect x="4.65" y="0.65" width="58.9029" height="58.9029" rx="9.35" fill="white"
@@ -42,7 +41,7 @@ get_header();
                         </svg>
 
                         <svg id="sl-garage"
-                            data-tippy-content="Одноканальное реле SR800 отвечает за автоматичекое и дистанционное управление гаражными воротами"
+                            data-tippy-content="Одноканальное реле &lt;a href=&quot;/product/single-relay-sr800/&quot; &gt; SR800 &lt;/a&gt; отвечает за автоматичекое и дистанционное управление гаражными воротами"
                             width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                                 <rect x="4.65" y="0.65" width="58.9" height="58.9" rx="9.35" fill="white"
@@ -199,10 +198,9 @@ get_header();
                             </defs>
                         </svg>
 
-
                         <svg id="sl-lights" data-tippy-placement="bottom"
-                            data-tippy-content="Управляйте освещением с помощью модулей SL800 или SR800" width="69"
-                            height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            data-tippy-content="Управляйте освещением с помощью модулей &lt;a href=&quot;/product/two-channel-dimmer-module-sl800/&quot; &gt; SL800 &lt;/a&gt; или &lt;a href=&quot;/product/single-relay-sr800/&quot; &gt; SR800 &lt;/a&gt;"
+                            width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                                 <rect x="4.65" y="0.65" width="58.9029" height="58.9029" rx="9.35" fill="white"
                                     stroke="#0088CC" stroke-width="1.3" />
@@ -250,7 +248,7 @@ get_header();
                         </svg>
 
                         <svg id="sl-safety" data-tippy-placement="bottom"
-                            data-tippy-content="Дверной датчик SD800 обеспечивает сигнализацию об открытии/закрытии двери, окна или форточки с контролем повышенной вибрации (стук, попытка взлома)"
+                            data-tippy-content="Дверной датчик &lt;a href=&quot;/product/door-sensor-sd800/&quot; &gt; SD800 &lt;/a&gt; обеспечивает сигнализацию об открытии/закрытии двери, окна или форточки с контролем повышенной вибрации (стук, попытка взлома)"
                             width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                                 <rect x="4.65" y="0.65" width="58.9029" height="58.9029" rx="9.35" fill="white"
@@ -286,7 +284,7 @@ get_header();
                     <div class="second-slide">
 
                         <svg id="sl-fire"
-                            data-tippy-content="Датчик дыма SS800 сигнализирует о задымленности помещений, предупреждая звуковыми сигналами об опасности пожара и отравления угарными газами, присылает уведомления в приложении и запускает пользовательсике сценарии"
+                            data-tippy-content="Датчик дыма &lt;a href=&quot;/product/smoke-sensor-ss800/&quot; &gt; SS800 &lt;/a&gt; сигнализирует о задымленности помещений, предупреждая звуковыми сигналами об опасности пожара и отравления угарными газами, присылает уведомления в приложении и запускает пользовательсике сценарии"
                             width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                                 <rect x="4.65" y="0.65" width="58.9029" height="58.9029" rx="9.35" fill="white"
@@ -329,7 +327,7 @@ get_header();
                         </svg>
 
                         <svg id="sl-ir"
-                            data-tippy-content="Модуль управления по инфракрасному каналу SI800 обеспечивает управление всей домашней техникой, управляемой с помощью пультов дистанционного управления (кондиционер, музыкальный центр, ТВ, радио и проч.)"
+                            data-tippy-content="Модуль управления по инфракрасному каналу &lt;a href=&quot;/product/ir-transmitter-si800/&quot; &gt; SI800 &lt;/a&gt; обеспечивает управление всей домашней техникой, управляемой с помощью пультов дистанционного управления (кондиционер, музыкальный центр, ТВ, радио и проч.)"
                             width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                                 <rect x="4.65" y="0.65" width="58.9029" height="58.9029" rx="9.35" fill="white"
@@ -354,7 +352,7 @@ get_header();
                         </svg>
 
                         <svg id="sl-power"
-                            data-tippy-content="Умная розетка SP800 позволяет управлять любыми потребителями с заявленной мощностью потребления до 2.5 кВ"
+                            data-tippy-content="Умная розетка &lt;a href=&quot;/product/smart-plug-sp800/&quot; &gt; SP800 &lt;/a&gt; позволяет управлять любыми потребителями с заявленной мощностью потребления до 2.5 кВ"
                             width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                                 <rect x="4.65" y="0.65" width="58.9029" height="58.9029" rx="9.35" fill="white"
@@ -385,7 +383,7 @@ get_header();
                         </svg>
 
                         <svg id="sl-temp" data-tippy-placement="bottom"
-                            data-tippy-content="Многофункциональный датчик SM800 сочетает в себе датчик температуры и влажности окружающего воздуха, датчик освещенности и датчик движения"
+                            data-tippy-content="Многофункциональный датчик &lt;a href=&quot;/product/multisensor-sm800/&quot; &gt; SM800 &lt;/a&gt; сочетает в себе датчик температуры и влажности окружающего воздуха, датчик освещенности и датчик движения"
                             width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                                 <rect x="4.65" y="0.65" width="58.9029" height="58.9029" rx="9.35" fill="white"
@@ -446,7 +444,7 @@ get_header();
                     <div class="third-slide">
 
                         <svg id="sl-cam2" data-tippy-placement="bottom"
-                            data-tippy-content="Видеокамера VKU-G14 обеспечивает безопасность Вашей придомовой территории, имеет ночной режим работы, угол обзора 100°, детектор движения и разрешение Full HD 1080р"
+                            data-tippy-content="Видеокамера &lt;a href=&quot;/product/outdoor-cam-vku-g14/&quot; &gt; VKU-G14 &lt;/a&gt; обеспечивает безопасность Вашей придомовой территории, имеет ночной режим работы, угол обзора 100°, детектор движения и разрешение Full HD 1080р"
                             width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                                 <rect x="4.65" y="0.65" width="58.9029" height="58.9029" rx="9.35" fill="white"
@@ -471,8 +469,8 @@ get_header();
                         </svg>
 
                         <svg id="sl-lights2" data-tippy-placement="bottom"
-                            data-tippy-content="Управляйте освещением с помощью модулей SL800 или SR800" width="69"
-                            height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            data-tippy-content="Управляйте освещением с помощью модулей &lt;a href=&quot;/product/two-channel-dimmer-module-sl800/&quot; &gt; SL800 &lt;/a&gt; или &lt;a href=&quot;/product/single-relay-sr800/&quot; &gt; SR800 &lt;/a&gt;"
+                            width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                                 <rect x="4.65" y="0.65" width="58.9029" height="58.9029" rx="9.35" fill="white"
                                     stroke="#0088CC" stroke-width="1.3" />
@@ -520,7 +518,7 @@ get_header();
                         </svg>
 
                         <svg id="sl-water"
-                            data-tippy-content="Автоматизируйте полив участка с помощью реле SR800 или умных розеток SP800"
+                            data-tippy-content="Автоматизируйте полив участка с помощью реле &lt;a href=&quot;/product/single-relay-sr800/&quot; &gt; SR800 &lt;/a&gt; или умных розеток &lt;a href=&quot;/product/smart-plug-sp800/&quot; &gt; SP800 &lt;/a&gt;"
                             width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                                 <rect x="4.65" y="0.65" width="58.9029" height="58.9029" rx="9.35" fill="white"
@@ -548,7 +546,7 @@ get_header();
                         </svg>
 
                         <svg id="sl-power2"
-                            data-tippy-content="Умная розетка SP800 позволяет автоматизировать подогрев бассейна и дистанционно управлять нагревателями"
+                            data-tippy-content="Умная розетка &lt;a href=&quot;/product/smart-plug-sp800/&quot; &gt; SP800 &lt;/a&gt; позволяет автоматизировать подогрев бассейна и дистанционно управлять нагревателями"
                             width="69" height="69" viewBox="0 0 69 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g filter="url(#filter0_d)">
                                 <rect x="4.65" y="0.65" width="58.9029" height="58.9029" rx="9.35" fill="white"
@@ -686,7 +684,7 @@ get_header();
                 </div>
                 <div class="uk-width-1-2 app-phone">
                     <div class="app-screens">
-                        <img  class="app-screen" src="/wp-content/themes/vkonnektu/img/new/screen1.jpg">
+                        <img class="app-screen" src="/wp-content/themes/vkonnektu/img/new/screen1.jpg">
                         <img class="app-screen uk-hidden" src="/wp-content/themes/vkonnektu/img/new/screen2.jpg">
                         <img class="app-screen uk-hidden" src="/wp-content/themes/vkonnektu/img/new/screen3.jpg">
                     </div>
