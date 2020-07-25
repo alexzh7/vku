@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-
+<div id="load"></div>
 <div class="main-page">
 
     <div class="first-section">

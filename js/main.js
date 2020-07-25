@@ -5,6 +5,9 @@
         window.scrollTo(0, 0);
     }
 
+    //Disable scroll
+    document.body.classList.add("stop-scrolling"); 
+
     window.onload = () => {
 
         updatePointer();
@@ -18,6 +21,10 @@
 
         wifiZigbeeSwitch();
         toggleAppScreenes();
+
+        //Remove preloader, enable scroll
+        document.getElementById('load').style.visibility="hidden";
+        document.body.classList.remove("stop-scrolling"); 
     }
 
     window.onresize = () => {

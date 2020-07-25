@@ -19,14 +19,14 @@
         <ul>
             <li>Навигация</li>
             <li><a href="/shop"> Каталог </a></li>
-            <li><a href="/premium"> Премиум </a></li>
+            <!-- <li><a href="/premium"> Премиум </a></li> -->
             <li><a href="/integration"> Интеграция </a></li>
         </ul>
         <ul>
             <li>Информация</li>
             <li><a href="/about"> О нас </a></li>
             <li><a href="/delivery"> Доставка </a></li>
-            <li><a href="/privacy-policy"> Политика конфиденциальности / Privacy policy </a></li>
+            <li><a href="/privacy-policy"> Политика конфиденциальности</a></li>
         </ul>
         <ul>
             <li>Контакты</li>
