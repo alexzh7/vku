@@ -127,6 +127,10 @@ function vkonnektu_scripts() {
 	wp_enqueue_style( 'swiper', get_stylesheet_directory_uri() . '/swiper.min.css');
 	wp_enqueue_style( 'montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
 	wp_enqueue_style( 'vku', get_stylesheet_directory_uri() . '/vku.css' );
+	if ( is_page(312) ) {
+		wp_enqueue_style( 'quickstart', get_stylesheet_directory_uri() . '/quickstart/style.css' );
+		wp_enqueue_script( 'quickstart', get_template_directory_uri() . '/quickstart/script.js', array(), false, true);
+	  }
 
 	wp_enqueue_script( 'vkonnektu-navigation', get_template_directory_uri() . '/js/navigation.js', array(), false, true);
 
@@ -243,19 +247,19 @@ function my_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	$count = WC()->cart->cart_contents_count;
 	?>
-	<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"> 
-		<img src="/wp-content/themes/vkonnektu/img/new/cart.svg" alt="Cart">
-		<span class="cart-count">
-			<?php
+<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+	<img src="/wp-content/themes/vkonnektu/img/new/cart.svg" alt="Cart">
+	<span class="cart-count">
+		<?php
 				if ( $count > 0 ) {
 					?>
-					<span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
-					<?php			
+		<span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+		<?php			
 				}
 			?>
-		</span>
-	</a>
-	<?php
+	</span>
+</a>
+<?php
 
 	$fragments['a.cart-contents'] = ob_get_clean();
 	
@@ -645,3 +649,27 @@ if ( ! function_exists( 'woocommerce_form_field' ) ) {
 }
 
 // stylize field form end 
+
+/**
+ * Hide shipping rates when free shipping is available.
+ * Updated to support WooCommerce 2.6 Shipping Zones.
+ *
+ * @param array $rates Array of rates found for the package.
+ * @return array
+ */
+function my_hide_shipping_when_free_is_available( $rates ) {
+	$free = array();
+	foreach ( $rates as $rate_id => $rate ) {
+		if ( 'free_shipping' === $rate->method_id ) {
+			$free[ $rate_id ] = $rate;
+			break;
+		}
+	}
+	return ! empty( $free ) ? $free : $rates;
+}
+add_filter( 'woocommerce_package_rates', 'my_hide_shipping_when_free_is_available', 100 );
+
+add_filter( 'woocommerce_product_categories_widget_args', function($list_args) {
+	$list_args['show_option_all'] = 'Все товары';
+	return $list_args;
+});

@@ -166,6 +166,7 @@
                                     </li>
                                     <!-- <li class="hide-nav"><a href="#">Приложение</a></li> -->
                                     <li class="hide-nav"><a href="/integration">Интеграция</a></li>
+                                    <li class="hide-nav"><a href="/quick-start">Быстрый старт</a></li>
                                     <li class="hide-nav"><a href="/premium">Премиум</a></li>
                                     <li class="hide-nav"><a href="/about">О нас</a></li>
                                 </ul>
@@ -368,6 +369,7 @@
                         </li>
                         <!-- <li><a href="#">Приложение</a></li> -->
                         <li><a href="/integration">Интеграция</a></li>
+                        <li><a href="/quick-start">Быстрый старт</a></li>
                         <li><a href="/premium">Премиум</a></li>
                         <li><a href="/about">О нас</a></li>
                         <!-- <li><a href="#">RU | EN</a></li> -->
