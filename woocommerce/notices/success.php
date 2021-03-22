@@ -26,8 +26,8 @@ if ( ! $notices ) {
 ?>
 
 <?php foreach ( $notices as $notice ) : ?>
-	<div class="uk-alert uk-alert-success" uk-alert>
-		<a class="uk-close uk-icon uk-alert-close" uk-close></a>
+	<div class="uk-alert-success" uk-alert>
+		<a class="uk-alert-close" uk-close></a>
 		<p><?php echo wc_kses_notice( $notice['notice'] ); ?></p>
 	</div>
 <?php endforeach; ?>

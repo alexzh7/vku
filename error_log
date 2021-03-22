@@ -1,0 +1,4 @@
+[15-Feb-2021 06:31:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/vkonnate/public_html/wp-content/themes/vkonnektu/index.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/vkonnate/public_html/wp-content/themes/vkonnektu/index.php on line 15

@@ -49,6 +49,7 @@
                                                     <li><a href="#">Наблюдение</a></li>
                                                     <li><a href="#">Освещение и автоматика</a></li>
                                                     <li><a href="#">Датчики</a></li>
+                                                    <li><a href="#">Комплекты</a></li>
                                                 </ul>
 
 
@@ -156,17 +157,65 @@
                                                             </div>
                                                         </a>
                                                     </div>
+
+                                                    <div class="uk-flex uk-flex-center"
+                                                        uk-grid>
+                                                        <a href="/product/max/">
+                                                            <div class="nav-item uk-transition-toggle" tabindex="0">
+                                                                <img class="uk-transition-scale-up uk-transition-opaque"
+                                                                    src="/wp-content/themes/vkonnektu/img/max_nav.jpg"
+                                                                    alt="Max">
+                                                                <h5>Макс</h5>
+                                                            </div>
+                                                        </a>
+                                                        <a href="/product/automation/">
+                                                            <div class="nav-item uk-transition-toggle" tabindex="0">
+                                                                <img class="uk-transition-scale-up uk-transition-opaque"
+                                                                    src="/wp-content/themes/vkonnektu/img/automation_nav.jpg"
+                                                                    alt="Automation">
+                                                                <h5>Автоматика</h5>
+                                                            </div>
+                                                        </a>
+                                                        <a href="/product/security/">
+                                                            <div class="nav-item uk-transition-toggle" tabindex="0">
+                                                                <img class="uk-transition-scale-up uk-transition-opaque"
+                                                                    src="/wp-content/themes/vkonnektu/img/security_nav.jpg"
+                                                                    alt="Security">
+                                                                <h5>Охрана</h5>
+                                                            </div>
+                                                        </a>
+                                                        <a href="/product/video-start/">
+                                                            <div class="nav-item uk-transition-toggle" tabindex="0">
+                                                                <img class="uk-transition-scale-up uk-transition-opaque"
+                                                                    src="/wp-content/themes/vkonnektu/img/video_start_nav.jpg"
+                                                                    alt="Video Start">
+                                                                <h5>Видео Старт</h5>
+                                                            </div>
+                                                        </a>
+                                                        <a href="/product/video-pro/">
+                                                            <div class="nav-item uk-transition-toggle" tabindex="0">
+                                                                <img class="uk-transition-scale-up uk-transition-opaque"
+                                                                    src="/wp-content/themes/vkonnektu/img/video_pro_nav.jpg"
+                                                                    alt="Video Pro">
+                                                                <h5>Видео Профи</h5>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+
                                                 </ul>
 
-
-
+                                                <div class="header-catalog">
+                                                    <a href="/shop">Все устройства</a>
+                                                </div>
+                                                
                                             </div>
 
                                         </div>
                                     </li>
-                                    <!-- <li class="hide-nav"><a href="#">Приложение</a></li> -->
                                     <li class="hide-nav"><a href="/integration">Интеграция</a></li>
+                                    <li class="hide-nav"><a href="/quick-start">Быстрый старт</a></li>
                                     <li class="hide-nav"><a href="/premium">Премиум</a></li>
+                                    <li class="hide-nav"><a href="/delivery">Доставка и оплата</a></li>
                                     <li class="hide-nav"><a href="/about">О нас</a></li>
                                 </ul>
                             </div>
@@ -214,12 +263,12 @@
 
 
             <!-- Mobile nav -->
-            <div id="offcanvas-nav" uk-offcanvas="mode:none" class="uk-animation-fade">
+            <div id="offcanvas-nav" uk-offcanvas="mode:none" style="display: none;">
                 <div class="uk-offcanvas-bar">
 
                     <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
 
-                        <li><a href="#">Главная</a></li>
+                        <li><a href="/">Главная</a></li>
                         <li class="uk-parent">
                             <a href="#">Каталог <img class="cat-chevron-left"
                                     src="/wp-content/themes/vkonnektu/img/chevron-left.svg" alt=""> </a>
@@ -363,14 +412,78 @@
                                         </li>
                                     </ul>
                                 </li>
+
+                                <li class="uk-parent">
+                                    <a href="#">Комплекты <img class="cat-chevron-left"
+                                            src="/wp-content/themes/vkonnektu/img/chevron-left.svg" alt=""> </a>
+                                    <ul class="uk-nav-sub">
+                                        <li>
+                                            <a href="/product/max/">
+                                                <div class="uk-flex uk-flex-middle">
+                                                    <img class="uk-transition-scale-up uk-transition-opaque"
+                                                        src="/wp-content/themes/vkonnektu/img/max_nav.jpg"
+                                                        alt="Max">
+                                                    <span>Макс</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/product/automation/">
+                                                <div class="uk-flex uk-flex-middle">
+                                                    <img class="uk-transition-scale-up uk-transition-opaque"
+                                                        src="/wp-content/themes/vkonnektu/img/automation_nav.jpg"
+                                                        alt="Automation">
+                                                    <span>Автоматика</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/product/security/">
+                                                <div class="uk-flex uk-flex-middle">
+                                                    <img class="uk-transition-scale-up uk-transition-opaque"
+                                                        src="/wp-content/themes/vkonnektu/img/security_nav.jpg"
+                                                        alt="Security">
+                                                    <span>Охрана</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/product/video-start/">
+                                                <div class="uk-flex uk-flex-middle">
+                                                    <img class="uk-transition-scale-up uk-transition-opaque"
+                                                        src="/wp-content/themes/vkonnektu/img/video_start_nav.jpg"
+                                                        alt="Video Start">
+                                                    <span>Видео Старт</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/product/video-pro/">
+                                                <div class="uk-flex uk-flex-middle">
+                                                    <img class="uk-transition-scale-up uk-transition-opaque"
+                                                        src="/wp-content/themes/vkonnektu/img/video_pro_nav.jpg"
+                                                        alt="Video Pro">
+                                                    <span>Видео Профи</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="/shop">Все устройства 
+                                        <span uk-icon="icon: chevron-right"></span>
+                                    </a>
+                                </li>
+
                             </ul>
 
                         </li>
-                        <!-- <li><a href="#">Приложение</a></li> -->
                         <li><a href="/integration">Интеграция</a></li>
+                        <li><a href="/quick-start">Быстрый старт</a></li>
                         <li><a href="/premium">Премиум</a></li>
+                        <li><a href="/delivery"> Оплата и доставка </a></li>
                         <li><a href="/about">О нас</a></li>
-                        <!-- <li><a href="#">RU | EN</a></li> -->
                     </ul>
 
                 </div>

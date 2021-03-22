@@ -34,15 +34,17 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 <div class="steps-checkout">
     <ul class="cart__steps uk-child-width-expand uk-grid-collapse" uk-grid>
         <li class="and-active">
-            <div class="uk-grid-small uk-width-auto" uk-grid>
-                <div class="cart__steps-icon">
-                    <span class="icon" uk-icon="icon: cart"></span>
-                    <span>1</span>
+            <a href="/cart">
+                <div class="uk-grid-small uk-width-auto" uk-grid>
+                    <div class="cart__steps-icon">
+                        <span class="icon" uk-icon="icon: cart"></span>
+                        <span>1</span>
+                    </div>
+                    <div class="uk-grid-small uk-width-expand uk-flex uk-flex-middle" uk-grid>
+                        <div class="uk-width-expand"><span class="uk-visible@m">Корзина</span></div>
+                    </div>
                 </div>
-                <div class="uk-grid-small uk-width-expand uk-flex uk-flex-middle" uk-grid>
-                    <div class="uk-width-expand"><span class="uk-visible@m">Корзина</span></div>
-                </div>
-            </div>
+            </a>
         </li>
         <li class="active">
             <div class="uk-grid-small uk-width-auto" uk-grid>

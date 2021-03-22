@@ -126,7 +126,18 @@ function vkonnektu_scripts() {
 	wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css');
 	wp_enqueue_style( 'swiper', get_stylesheet_directory_uri() . '/swiper.min.css');
 	wp_enqueue_style( 'montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
-	wp_enqueue_style( 'vku', get_stylesheet_directory_uri() . '/vku.css' );
+
+	//Main stylesheet
+	wp_enqueue_style( 'vku', get_stylesheet_directory_uri() . '/vku.css', array(), '1.3.1');
+
+	if ( is_page(312) ) {
+		wp_enqueue_style( 'quickstart', get_stylesheet_directory_uri() . '/quickstart/style.css' );
+		wp_enqueue_script( 'quickstart', get_template_directory_uri() . '/quickstart/script.js', array(), false, true);
+	}
+
+	if ( is_shop() ) {
+		wp_enqueue_script( 'shop', get_template_directory_uri() . '/js/shop.js', array(), false, true);
+	}
 
 	wp_enqueue_script( 'vkonnektu-navigation', get_template_directory_uri() . '/js/navigation.js', array(), false, true);
 
@@ -243,19 +254,19 @@ function my_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	$count = WC()->cart->cart_contents_count;
 	?>
-	<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"> 
-		<img src="/wp-content/themes/vkonnektu/img/new/cart.svg" alt="Cart">
-		<span class="cart-count">
-			<?php
+<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+	<img src="/wp-content/themes/vkonnektu/img/new/cart.svg" alt="Cart">
+	<span class="cart-count">
+		<?php
 				if ( $count > 0 ) {
 					?>
-					<span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
-					<?php			
+		<span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+		<?php			
 				}
 			?>
-		</span>
-	</a>
-	<?php
+	</span>
+</a>
+<?php
 
 	$fragments['a.cart-contents'] = ob_get_clean();
 	
@@ -265,7 +276,7 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment
 
 
 
-// add wrapper to item on start page start
+// add wrapper to item on start page
 
 if ( ! function_exists( 'woocommerce_template_loop_product_link_open' ) ) {
 	/**
@@ -286,7 +297,6 @@ if ( ! function_exists( 'woocommerce_template_loop_product_link_close' ) ) {
 	}
 }
 
-// add wrapper to item on start page end
 
 function woocommerce_link_open_loop_product(){
 	global $product;
@@ -302,7 +312,7 @@ function woocommerce_link_close_loop_product(){
 add_action( 'woocommerce_before_shop_loop_item', 'woocommerce_link_open_loop_product', 10 );
 add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_link_close_loop_product', 10 );
 
-// add to cart button start
+// add to cart button
 
 function woocommerce_template_loop_add_to_cart( $args = array() ) {
 	global $product;
@@ -339,21 +349,18 @@ function woocommerce_template_loop_add_to_cart( $args = array() ) {
 	}
 }
 
-// add to cart button end
-
-// size head of name product start
+// size head of name product
 
 function woocommerce_template_loop_product_title() {
 	echo '<h4 class="' . esc_attr( apply_filters( 'woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title' ) ) . '">' . get_the_title() . '</h4>';
 	echo '</>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
-// size head of name product end
 
-// replase places header on card product start
+// replace places header on card product
 remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
 add_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_title', 30 );
-// replase places header on card product end
+
 
 //Show first image in products
 add_action( 'woocommerce_before_single_product_summary', 'custom_show_product_images', 20);
@@ -396,11 +403,8 @@ function custom_show_product_images($attachment_id, $main_image = false ) {
 
 }
 
-// stylize message cart empty start 
 
-// stylize message cart empty end
-
-// stylize field form start
+// stylize field form
 
 /** Forms */
 
@@ -644,4 +648,151 @@ if ( ! function_exists( 'woocommerce_form_field' ) ) {
 	}
 }
 
-// stylize field form end 
+/**
+ * Hide shipping rates when free shipping is available, but keep "Local pickup" 
+ * Updated to support WooCommerce 2.6 Shipping Zones
+ */
+add_filter( 'woocommerce_package_rates', 'hide_shipping_when_free_is_available', 10, 2 );
+
+function hide_shipping_when_free_is_available( $rates, $package ) {
+	$new_rates = array();
+	foreach ( $rates as $rate_id => $rate ) {
+		// Only modify rates if free_shipping is present.
+		if ( 'free_shipping' === $rate->method_id ) {
+			$new_rates[ $rate_id ] = $rate;
+			break;
+		}
+	}
+
+	if ( ! empty( $new_rates ) ) {
+		//Save local pickup if it's present.
+		foreach ( $rates as $rate_id => $rate ) {
+			if ('local_pickup' === $rate->method_id ) {
+				$new_rates[ $rate_id ] = $rate;
+				break;
+			}
+		}
+		return $new_rates;
+	}
+
+	return $rates;
+}
+
+
+//Shop page widget
+add_filter( 'woocommerce_product_categories_widget_args', function($list_args) {
+	$list_args['show_option_all'] = 'Все товары';
+	return $list_args;
+});
+
+
+//Change price in catalog
+add_filter('woocommerce_format_sale_price', 'fomat_cat_price', 100, 3);
+
+function fomat_cat_price( $price, $regular_price, $sale_price ) {
+	$price = '<span class="discount-price">' . ( is_numeric( $sale_price ) ? wc_price( $sale_price ) : $sale_price ) . '</span> <span class="full-price">' . ( is_numeric( $regular_price ) ? wc_price( $regular_price ) : $regular_price ) . '</span>';
+    return $price;
+}
+
+
+//Hide Shipping Fields for Local Pickup
+add_action( 'woocommerce_after_checkout_form', 'bbloomer_disable_shipping_local_pickup' );
+  
+function bbloomer_disable_shipping_local_pickup( $available_gateways ) {
+   $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
+   $chosen_shipping = $chosen_methods[0];
+   if ( 0 === strpos( $chosen_shipping, 'local_pickup' ) ) {
+   ?>
+      <script type="text/javascript">
+		 jQuery('#customer_details .delivery-wrapper').fadeOut();
+      </script>
+   <?php  
+   } 
+
+   ?>
+      <script type="text/javascript">
+         jQuery('form.checkout').on('change','input[name^="shipping_method"]',function() {
+            var val = jQuery( this ).val();
+            if (val.match("^local_pickup")) {
+                     jQuery('#customer_details .delivery-wrapper').fadeOut();
+               } else {
+               jQuery('#customer_details .delivery-wrapper').fadeIn();
+            }
+		 });
+      </script>
+   <?php
+  
+}
+
+
+//Make checkout fields not required
+add_filter( 'woocommerce_billing_fields' , 'custom_override_checkout_fields', 100, 1 );
+
+function custom_override_checkout_fields( $fields ) {
+	$fields['billing_postcode']['required'] = false;
+	$fields['billing_state']['required'] = false;
+	return $fields;
+}
+
+
+//Add explanation of local pickup
+add_action( 'woocommerce_after_shipping_rate', 'checkout_shipping_additional_field', 20, 2 );
+
+function checkout_shipping_additional_field( $method, $index )
+{
+    if( $method->get_id() == 'local_pickup:3' ){
+		echo '
+		<span id="local_pickup_info" uk-icon="question"></span>
+		<div uk-drop="mode: click; pos: bottom-justify; boundary: .woocommerce-shipping-totals; boundary-align: true">
+			<div id="local_pickup_description" uk-alert>
+				<a class="uk-drop-close" uk-close></a>
+				<p>Вы можете самостоятельно забрать заказ <a href="/delivery">в рабочие дни</a> в любом из офисов VKU по адресам:</p>
+				<ul>
+					<li><a href="https://goo.gl/maps/NhqZCAeAzUUidQGi8" target="_blank" rel="noopener">г. Москва, Ленинградский проспект 63, офис 702</a></li>
+					<li><a href="https://goo.gl/maps/JEGdihkg86dZGs2j9" target="_blank" rel="noopener">г. Владивосток, Шилкинская 10</a></li>
+				</ul>
+			</div>
+		</div>
+		';
+	}
+}
+
+
+//Allow UIkit attributes in woocommerce notices
+add_filter('wp_kses_allowed_html', 'my_filter_allowed_html', 10, 2);
+
+function my_filter_allowed_html($allowed, $context){
+    if (is_array($context)) {
+        return $allowed;
+    }
+
+    if ($context === 'post') { 
+        $allowed['div']['uk-alert'] = true;
+        $allowed['a']['uk-close'] = true;
+    }
+
+    return $allowed;
+}
+
+// New order notification only for "Pending" Order status
+add_action( 'woocommerce_checkout_order_processed', 'pending_new_order_notification', 20, 1 );
+function pending_new_order_notification( $order_id ) {
+    // Get an instance of the WC_Order object
+    $order = wc_get_order( $order_id );
+
+    // Only for "pending" order status
+    if( ! $order->has_status( 'pending' ) ) return;
+
+    // Get an instance of the WC_Email_New_Order object
+    $wc_email = WC()->mailer()->get_emails()['WC_Email_New_Order'];
+
+    ## -- Customizing Heading, subject (and optionally add recipients)  -- ##
+    // Change Subject
+    $wc_email->settings['subject'] = __('{site_title} - Сформирован новый заказ, ожидается оплата, № ({order_number}) - {order_date}');
+    // Change Heading
+    $wc_email->settings['heading'] = __('Это уведомление приходит, когда клиент нажал "Подтвердить заказ" и перешел на страницу оплаты'); 
+    // $wc_email->settings['recipient'] .= ',name@email.com'; // Add email recipients (coma separated)
+
+    // Send "New Email" notification (to admin)
+    $wc_email->trigger( $order_id );
+}

@@ -29,9 +29,10 @@ get_header( 'shop' );
 do_action( 'woocommerce_before_main_content' );
 
 ?>
+
 <header class="woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+	<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 	<?php endif; ?>
 
 	<?php
@@ -44,7 +45,46 @@ do_action( 'woocommerce_before_main_content' );
 	do_action( 'woocommerce_archive_description' );
 	?>
 </header>
-<?php
+
+<!-- Валерий Булаш -->
+<style>
+	@media screen and (max-width: 499px) {
+		#content {
+			display: block;
+		}
+	}
+
+	@media screen and (min-width: 500px) {
+		#content {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			flex-wrap: nowrap;
+		}
+
+		#content .widget-area {
+			width: 300px;
+			margin-right: 10px;
+			margin-top: 20px;
+			flex-basis: 300px;
+			flex-grow: 0;
+			flex-shrink: 0;
+		}
+
+		#content .products-area {
+			flex-basis: auto;
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+	}
+
+</style>
+
+<div id="primary" class="content-area">
+	<div id="content">
+		<?php get_sidebar(); ?>
+		<span class="products-area">
+			<?php
 if ( woocommerce_product_loop() ) {
 
 	/**
@@ -54,7 +94,9 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked woocommerce_result_count - 20
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
-	do_action( 'woocommerce_before_shop_loop' );
+
+	// Remove sorting
+	//do_action( 'woocommerce_before_shop_loop' );
 
 	woocommerce_product_loop_start();
 
@@ -95,6 +137,13 @@ if ( woocommerce_product_loop() ) {
  */
 do_action( 'woocommerce_after_main_content' );
 
+		?>
 
+			<!-- Валерий Булаш -->
+		</span>
+	</div>
+</div>
+<!-- .Валерий Булаш -->
 
+<?php
 get_footer( 'shop' );

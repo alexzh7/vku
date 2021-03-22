@@ -26,7 +26,7 @@ if ( ! $notices ) {
 ?>
 
 <div class="uk-alert-danger" uk-alert role="alert">
-    
+	<a class="uk-alert-close" uk-close></a>
 	<?php foreach ( $notices as $notice ) : ?>
 		<p<?php echo wc_get_notice_data_attr( $notice ); ?>><?php echo wc_kses_notice( $notice['notice'] ); ?></p>
 	<?php endforeach; ?>
